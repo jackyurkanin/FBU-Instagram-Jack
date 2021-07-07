@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jack-Instagram</string>
+    <string name="User">Username</string>
+    <string name="Pass">Password</string>
+    <string name="Login">Login</string>
+
+</resources>
