@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent homeIntent = new Intent(this, HomeActivity.class);
                 startActivity(homeIntent);
                 return true;
+            case R.id.miPost:
+                Intent postIntent = new Intent(this, PostActivity.class);
+                startActivity(postIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 
