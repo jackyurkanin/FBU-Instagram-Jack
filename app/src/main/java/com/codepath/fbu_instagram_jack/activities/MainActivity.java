@@ -21,10 +21,10 @@ import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
-    FragmentManager fragmentManager;
-    Context context;
-    Fragment fragment;
+    private BottomNavigationView bottomNavigationView;
+    private FragmentManager fragmentManager;
+    private Context context;
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.miPost:
                                 fragment = PostFragment.newInstance(context);
                                 break;
-                            //case R.id.action_music:
                             default:
                                 //fragment = fragment3;
                                 break;
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.miHome);
         fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

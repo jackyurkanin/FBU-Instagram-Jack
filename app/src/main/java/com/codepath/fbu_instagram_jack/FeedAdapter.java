@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.codepath.fbu_instagram_jack.activities.DetailsActivity;
 import com.codepath.fbu_instagram_jack.models.Post;
 import com.parse.ParseFile;
@@ -20,11 +21,11 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
-
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     private Context context;
     private List<Post> feed;
     private static final String POST = "post";
+    private static int ROUNDED_CORNERS = 30;
 
     public FeedAdapter(Context context, List<Post> feed) {
         this.context = context;
@@ -76,10 +77,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         public void bind(Post post) {
             // Bind the post data to the view elements
             tvDescription.setText(post.getDescription());
-            tvUsername.setText(post.getUser().getUsername());
+            tvUsername.setText("@" + post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null) {
-                Glide.with(context).load(image.getUrl()).into(ivImage);
+                Glide.with(context).load(image.getUrl())
+                        .centerCrop()
+                        .transform(new RoundedCorners(ROUNDED_CORNERS))
+                        .into(ivImage);
             }
         }
 
