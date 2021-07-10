@@ -66,6 +66,9 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 Describe any challenges encountered while building the app.
 
+- Difficulty with conversion to Fragments and use of Bottom Navigation Bar. It was very confusing; however, it was simply adding in a menu at bottom then
+  adding menu items that populated the frame with the chosen fragment.
+
 ## License
 
     Copyright 2021 Jack Yurkanin
